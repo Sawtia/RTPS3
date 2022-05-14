@@ -48,8 +48,14 @@
 # print(a)
 #
 a = [3, 2, 5, 3, 7, 3, 6]
-for i range(l,len(a))
+for i in range(1,len(a)):
     j=i-1
-    while j>0 and a[]
+    k=a[i]
+    while j>0 and k<a[j]:
+        a[j+1]=a[j]
+        j-=1
+    a[j+1]=k
+print(a)
+
 
 
