@@ -13,3 +13,20 @@
 # a= json.load(f)
 # print(type(a))
 # f.close()
+
+
+import sys
+sys.setrecursionlimit(10000)
+def factorial(n):
+    if n == 0:
+        return 1
+    return n*factorial(n-1)
+
+print(factorial(2130))
+#
+# a=5
+# b=4
+#
+#
+# c= 6 if a>b else 5
+# print(c)
