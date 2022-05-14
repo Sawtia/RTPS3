@@ -1,21 +1,22 @@
 # tuple=(1,2,3,4)
 # a = {1,2,3,4}
-# list=[1,2,3,4]
-#
+# list1=[1,2,3,4]
+
 # b=set(list)
 # print(type(b))
 #
 # test = {'login':'123',
 #         'ivan': '143',
 #         'max': '67'}
-# # print(test['login'])
-# # print(test.keys())
-# # print(test.values())
-# a=test.keys()
-# b = list(a)
-# c=b[0]
-# print(c)
-# # print(list(test.values())[2])
+# print(test['login'])
+# print(test.keys())
+# print(test.values())
+a = {1,2,3,4}
+b=a.keys()
+b = list(b)
+c=b[0]
+print(c)
+# print(list(test.values())[2])
 #
 # def logpas():
 #     login = input('login:')
@@ -73,30 +74,30 @@
 # print(summ)
 #
 
-
-menu = {'pizza1':'100',
-        'pizza2':'200'}
-
-def add_pizza(name,price):
-    if name in menu.keys():
-        print('already there is')
-    else:
-        menu[name] = price
-print('before')
-print(menu)
-add_pizza('pizza3',100)
-print('after')
-print(menu)
-
-
-def remove_pizza(name):
-    if name in menu.keys()
-        print('delete')
-        del menu[name]
-    else:
-        print('no pizza')
-
-
-def order
-
-
+#
+# menu = {'pizza1':'100',
+#         'pizza2':'200'}
+#
+# def add_pizza(name,price):
+#     if name in menu.keys():
+#         print('already there is')
+#     else:
+#         menu[name] = price
+# print('before')
+# print(menu)
+# add_pizza('pizza3',100)
+# print('after')
+# print(menu)
+#
+#
+# def remove_pizza(name):
+#     if name in menu.keys()
+#         print('delete')
+#         del menu[name]
+#     else:
+#         print('no pizza')
+#
+#
+# def order
+#
+#
