@@ -74,33 +74,57 @@
 # print(summ)
 #
 
-#
-menu = {'pizza1':'100',
-        'pizza2':'200'}
+# #
+# menu = {'pizza1':'100', 'pizza2':'200'}
 
+
+import json
+# with open('test.json','r') as f:
+#     menu=json.load(f)
+
+def load_menu():
+    f = open('test.json', 'r')
+    menu = json.load(f)
+    f.close
+    return(menu)
+
+def save_menu(menu):
+    f = open('test.json', 'w')
+    json.dump(menu, f)
+    f.close()
 def add_pizza(name,price):
+    menu= load_menu()
     if name in menu.keys():
         print('already there is')
     else:
         menu[name] = price
-print('before')
-print(menu)
-add_pizza('pizza3',100)
-print('after')
-print(menu)
+    save_menu(menu)
+# print('before')
+# print(menu)
+# add_pizza('pizza3',100)
+# print('after')
+# print(menu)
 
 
 def remove_pizza(name):
+    menu = load_menu()
     if name in menu.keys():
         print('delete')
         del menu[name]
     else:
         print('no pizza')
+    save_menu(menu)
+
+# f = open(text.txt, w+)
+
+
+
 
 # list_keys = list(menu.keys())
 # list_keys_sting =',',join(list_keys)
 
 def order_pizza():
+    menu = load_menu()
     order=[]
     cost=0
     while True:
@@ -117,29 +141,28 @@ def order_pizza():
                 print('Pizza added')
                 print(cost)
     return (order, cost)
+if __name__ == "__main__":
+    while True:
+        q3 =input('continue?')
+        if q3 == 'yes':
 
-while True:
-    q3 =input('continue?')
-    if q3 == 'yes':
-
-        role = input('choose role:')
-        if role == 'admin':
-            q2 = input('add or delete?')
-            if q2 == 'add':
-                name_pizza = input('name pizza:')
-                name_pizza = name_pizza.strip()
-                price_pizza = int(input('price:'))
-                add_pizza(name_pizza, price_pizza)
-            elif q2 == 'remove':
-                name_pizza ==input('for deleting:'  )
-                remove_pizza(name_pizza)
-        elif role == 'user':
-            print(order_pizza())
+            role = input('choose role:')
+            if role == 'admin':
+                q2 = input('add or delete?')
+                if q2 == 'add':
+                    name_pizza = input('name pizza:')
+                    price_pizza = int(input('price:'))
+                    add_pizza(name_pizza, price_pizza)
+                elif q2 == 'remove':
+                    name_pizza ==input('for deleting:'  )
+                    remove_pizza(name_pizza)
+            elif role == 'user':
+                print(order_pizza())
+            else:
+                print('wrong')
+        elif q3 == 'no':
+            break
         else:
-            print('wrong')
-    elif q3 == 'no':
-        break
-    else:
-        print('mistake')
+            print('mistake')
 
 

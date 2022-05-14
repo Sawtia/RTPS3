@@ -51,7 +51,7 @@ a = [3, 2, 5, 3, 7, 3, 6]
 for i in range(1,len(a)):
     j=i-1
     k=a[i]
-    while j>0 and k<a[j]:
+    while j>=0 and k<a[j]:
         a[j+1]=a[j]
         j-=1
     a[j+1]=k
