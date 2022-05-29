@@ -30,7 +30,19 @@ class Pizzeria:
             del menu[name]
         else:
             print('no pizza')
-        self.__save_menu()
+        self.__save_menu(menu)
+
+
+    def order_pizza_api(self, order):
+        menu = self.load_menu()
+        cost = 0
+        for name in order:
+            if name in menu.keys():
+                cost += menu[name]
+            else:
+                return None
+        return cost
+
 
     def order_pizza(self):
             menu = self.load_menu()
